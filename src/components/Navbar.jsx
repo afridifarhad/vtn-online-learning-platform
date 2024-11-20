@@ -25,7 +25,7 @@ function Navbar({ sidebarToggle, setSidebarToggle }) {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/login",
+        `${import.meta.env.VITE_API_URL}/api/login`,
         formData
       );
       setIsModalOpen(false); // Close form modal
@@ -56,11 +56,11 @@ function Navbar({ sidebarToggle, setSidebarToggle }) {
 
         {/* Responsive search input */}
         <div className="relative w-full max-w-xs sm:max-w-sm  md:max-w-md lg:max-w-96 ml-64 hidden md:block sm:hidden">
-          <IoSearch className="absolute  mt-2 pl-2" />
+          <IoSearch className="absolute mt-2 pl-2" />
           <input
             type="text"
             placeholder="Search..."
-            className="w-[38rem] pl-8 text-lg py-1 rounded-lg shadow outline-none max-w-md "
+            className="w-[38rem] pl-8 text-lg py-1 rounded-lg shadow outline-none max-w-md"
           />
         </div>
       </div>
